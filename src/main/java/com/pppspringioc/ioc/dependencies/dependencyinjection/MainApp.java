@@ -13,7 +13,8 @@ import com.pppspringioc.ioc.dependencies.dependencyinjection.service.SimpleMovie
 public class MainApp {
     public static void main(String[] args) {
         // Load the Spring context using Java-based configuration
-        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        ApplicationContext context = 
+        		new AnnotationConfigApplicationContext(AppConfig.class);
 
         // Get the SimpleMovieLister bean
         SimpleMovieLister movieLister = context.getBean(SimpleMovieLister.class);
