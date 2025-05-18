@@ -10,6 +10,7 @@ import com.pppspringioc.ioc.containeroverview.dao.jpa.JpaAccountDao;
 import com.pppspringioc.ioc.containeroverview.dao.jpa.JpaItemDao;
 import com.pppspringioc.ioc.containeroverview.service.PetStoreServiceImpl;
 
+// Java based Configuration Metadata
 @Configuration
 // @Import({ServiceConfig.class, DaoConfig.class})
 public class AppConfig {
