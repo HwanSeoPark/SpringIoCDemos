@@ -8,10 +8,11 @@ import com.pppspringioc.ioc.annotationbasedcontainerconfiguration.usingautowired
 @Component
 public class MultipleConstructorsBean {
 
-    private MovieFinder movieFinder;
+    private MovieFinder movieFinder; // MovieFinder를 구현한 구체를 필요로함
 
+  
     // 1) 디폴트 생성자 (required=false가 아님)
-    //   - 단 하나의 생성자라면 @Autowired가 없어도 자동 주입이 되지만
+    //   - 단 하나의 생성자만 정의되었다면 @Autowired가 없어도 자동 주입이 되지만
     //     여기서는 여러 생성자가 있으므로 구분이 필요.
     public MultipleConstructorsBean() {
         System.out.println("[MultipleConstructorsBean] Default constructor called");
@@ -25,7 +26,7 @@ public class MultipleConstructorsBean {
     }
 
     // 3) 다른 생성자 (required=false)
-    //@Autowired(required = false)
+//    @Autowired/*(required = true)*/(required = false)
     public MultipleConstructorsBean(MovieFinder finder1, MovieFinder finder2) {
         // 만약 MovieFinder 타입 빈이 1개밖에 없으면 이 생성자는 충족 불가 -> 이 생성자는 사용되지 않음
         System.out.println("[MultipleConstructorsBean] Overloaded constructor with 2 finders called");

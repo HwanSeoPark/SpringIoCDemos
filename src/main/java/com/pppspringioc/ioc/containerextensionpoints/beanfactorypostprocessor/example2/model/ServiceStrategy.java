@@ -1,4 +1,5 @@
-package com.pppspringioc.ioc.containerextensionpoints.beanfactorypostprocessor.example1.model;
+package com.pppspringioc.ioc.containerextensionpoints.beanfactorypostprocessor.example2.model;
+
 
 public class ServiceStrategy {
 

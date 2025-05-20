@@ -1,4 +1,4 @@
-package com.pppspringioc.ioc.containerextensionpoints.beanfactorypostprocessor.example2.model;
+package com.pppspringioc.ioc.containerextensionpoints.beanfactorypostprocessor.example1.model;
 
 public class DataSource {
 

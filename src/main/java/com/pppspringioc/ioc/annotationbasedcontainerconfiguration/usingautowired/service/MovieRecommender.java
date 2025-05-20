@@ -21,7 +21,7 @@ public class MovieRecommender {
         this.customerPreferenceDao = customerPreferenceDao;
     }
 
-    // 3) 임의 메서드(여러 인자) 주입 예시
+    // 3) 임의 메서드(여러 인자) 주입 예시 << Setter 메서드 주입이랑 똑같다
     @Autowired
     public void prepare(MovieCatalog movieCatalog,
                         CustomerPreferenceDao customerPreferenceDao) {

@@ -1,6 +1,8 @@
 package com.pppspringioc.ioc.annotationbasedcontainerconfiguration.usingautowired;
 
 
+import java.util.Optional;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.pppspringioc.ioc.annotationbasedcontainerconfiguration.usingautowired.config.AppConfig;
@@ -13,7 +15,38 @@ import com.pppspringioc.ioc.annotationbasedcontainerconfiguration.usingautowired
 
 public class Main {
 
+	public static Optional<String> findNameById(int id) {
+		if (id == 1) {
+			return Optional.of("홍길동"); // 같이 있을 때
+		} else {
+			return Optional.empty(); // 값이 없을 때
+		}
+	}
+	
+	
     public static void main(String[] args) {
+    	
+    	Optional<String> nameOpt = findNameById(1);
+    	// findNameById(0)이면 value 값에 null 값이 들어감    	
+    	if(!nameOpt.isEmpty()) {
+    		String name = nameOpt.get();
+    	}else {
+    		
+    	} // 보통 이렇게 많이 쓴다
+    	
+    	nameOpt.ifPresent(name -> System.out.println("이름:" + name));
+    	
+    	// 값이 없으면 기본값 사용    
+    	String name = nameOpt.orElse("이름없음");
+    	
+    	try {
+    		String mustExistName = nameOpt.orElseThrow(()-> new IllegalArgumentException("이름이 존재하지 않습니다"));
+    		System.out.println("필수 이름 :" + mustExistName);		
+    	} catch(IllegalArgumentException e) {
+    		System.out.println(e.getMessage());
+    	}
+    	
+    	
         // 1) Java 기반 설정 클래스(AppConfig)를 이용한 ApplicationContext 로딩
         AnnotationConfigApplicationContext context = 
                 new AnnotationConfigApplicationContext(AppConfig.class);

@@ -10,8 +10,10 @@ import org.springframework.context.annotation.Configuration;
 
 import com.pppspringioc.ioc.beandefinitioninheritance.model.DerivedTestBean;
 import com.pppspringioc.ioc.beandefinitioninheritance.model.TestBean;
+import com.pppspringioc.ioc.beandefinitioninheritance.repository.YourRepository;
+import com.pppspringioc.ioc.beandefinitioninheritance.service.MyService;
 
-@Configuration
+@Configuration // 컨피그래이션 어노테이션이 등록된 클래스도 빈으로 등록된다
 public class BeanInheritanceConfig {
 
 	@Bean
@@ -20,6 +22,8 @@ public class BeanInheritanceConfig {
             @Override
             public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
 
+            	// 스테이트먼트가 너무 많아서 람다가 아닌 익명클래스로 작성
+            	
                 // 부모 빈 정의 생성
                 RootBeanDefinition parent = new RootBeanDefinition();
                 parent.setBeanClass(TestBean.class);
@@ -36,7 +40,7 @@ public class BeanInheritanceConfig {
                 GenericBeanDefinition child = new GenericBeanDefinition();
                 child.setParentName("inheritedTestBean"); // 부모 이름 지정
                 child.setBeanClass(DerivedTestBean.class);
-                child.getPropertyValues().add("name", "override"); // 상속된 name을 override
+                child.getPropertyValues().add("name", "child"); // 상속된 name을 override
                 child.setInitMethodName("initialize");
 
                 registry.registerBeanDefinition("inheritsWithDifferentClass", child);
@@ -48,4 +52,16 @@ public class BeanInheritanceConfig {
             }
         };
     }
+	
+	@Bean
+	public MyService myService() {
+		return new MyService();
+	}
+	
+	@Bean
+	public YourRepository yourRepository() {
+		return new YourRepository();
+	}
+	
+	
 }

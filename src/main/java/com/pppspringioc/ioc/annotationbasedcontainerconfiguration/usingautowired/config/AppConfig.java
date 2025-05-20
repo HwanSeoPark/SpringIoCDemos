@@ -7,4 +7,5 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan(basePackages = "com.intheeast.ioc.annotationbasedcontainerconfiguration.usingautowired")
 public class AppConfig {
     // 필요한 경우 @Bean 메서드 선언 가능
+	// ...
 }
