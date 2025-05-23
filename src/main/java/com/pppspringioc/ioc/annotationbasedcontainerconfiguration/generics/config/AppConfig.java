@@ -9,16 +9,16 @@ import com.pppspringioc.ioc.annotationbasedcontainerconfiguration.generics.domai
 import com.pppspringioc.ioc.annotationbasedcontainerconfiguration.generics.domain.IntegerStore;
 
 @Configuration
-@ComponentScan(basePackages = "com.intheeast.ioc.annotationbasedcontainerconfiguration.generics")
+@ComponentScan(basePackages = "com.pppspringioc.ioc.annotationbasedcontainerconfiguration.generics")
 public class AppConfig {
 	
 	@Bean
-    public Store<String> stringStore() {
+    public StringStore stringStore() {
         return new StringStore();
     }
 
     @Bean
-    public Store<Integer> integerStore() {
+    public IntegerStore integerStore() {
         return new IntegerStore();
     }
 

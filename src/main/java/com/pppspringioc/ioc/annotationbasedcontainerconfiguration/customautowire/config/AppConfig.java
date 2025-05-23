@@ -6,13 +6,14 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import com.pppspringioc.ioc.annotationbasedcontainerconfiguration.customautowire.marker.MyMarker;
+import com.pppspringioc.ioc.annotationbasedcontainerconfiguration.customautowire.marker.YourMarker;
 
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
 @Configuration
-@ComponentScan(basePackages = "com.intheeast.ioc.annotationbasedcontainerconfiguration.customautowire")
+@ComponentScan(basePackages = "com.pppspringioc.ioc.annotationbasedcontainerconfiguration.customautowire")
 public class AppConfig {
 
     // BeanFactoryPostProcessor는 static 메서드로 등록하는 편이 권장됩니다.
@@ -24,6 +25,7 @@ public class AppConfig {
         // 2) customQualifierTypes에 "MyMarker" 애노테이션 등록
         Set<Class<?>> customQualifiers = new HashSet<>();
         customQualifiers.add(MyMarker.class);
+        customQualifiers.add(YourMarker.class);
         configurer.setCustomQualifierTypes(customQualifiers);
 
         // 3) 리턴

@@ -3,6 +3,7 @@ package com.pppspringioc.ioc.annotationbasedcontainerconfiguration.customautowir
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import com.pppspringioc.ioc.annotationbasedcontainerconfiguration.customautowire.config.AppConfig;
 import com.pppspringioc.ioc.annotationbasedcontainerconfiguration.customautowire.service.MyConsumer;
+import com.pppspringioc.ioc.annotationbasedcontainerconfiguration.customautowire.service.MyProducer;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,6 +18,9 @@ public class Main {
         // 테스트 실행
         consumer.test();
 
+        MyProducer producer = ctx.getBean(MyProducer.class);
+        producer.test();
+        
         ctx.close();
     }
 }

@@ -12,8 +12,9 @@ public class StoreService {
 
     // 단일 제네릭 주입 (Store<String>)
     @Autowired
-    private Store<String> stringStore;  // stringStore()가 주입됨
-
+    private Store<String>/*StringStore*/ stringStore;  // stringStore()가 주입됨
+    // <String>의 String이 암시적인 Qualifier역할을 함
+    
     // 단일 제네릭 주입 (Store<Integer>)
     @Autowired
     private Store<Integer> integerStore; // integerStore()가 주입됨

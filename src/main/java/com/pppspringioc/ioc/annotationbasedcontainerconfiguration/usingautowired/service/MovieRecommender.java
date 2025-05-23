@@ -6,13 +6,16 @@ import org.springframework.stereotype.Service;
 import com.pppspringioc.ioc.annotationbasedcontainerconfiguration.usingautowired.dao.CustomerPreferenceDao;
 import com.pppspringioc.ioc.annotationbasedcontainerconfiguration.usingautowired.util.MovieCatalog;
 
-@Service
+// Service : 비즈니스 로직을 구현하는 컴포넌트
+@Service//@Component 써도된다 // StereoType : 이 컴포넌트(다음 클래스의 인스턴스)는 Service 목적을 두고 있다.
 public class MovieRecommender {
 
-    // 1) 필드 주입 예시
+	// 1) 필드 주입 예시(수업을 위한 예시)
+	// 보통 생성자 주입으로 한다
     @Autowired
     private MovieCatalog movieCatalog;  // ActionMovieCatalog 또는 DramaMovieCatalog 중 자동 매칭
 
+    // final필드는 DI할려면 무조건 컨스트럭터가 있어야한다
     private final CustomerPreferenceDao customerPreferenceDao;
 
     // 2) 생성자 주입 예시
@@ -21,7 +24,7 @@ public class MovieRecommender {
         this.customerPreferenceDao = customerPreferenceDao;
     }
 
-    // 3) 임의 메서드(여러 인자) 주입 예시 << Setter 메서드 주입이랑 똑같다
+    // 3) 일반 메서드(여러 아규먼트) 주입 예시 -> 추천안함
     @Autowired
     public void prepare(MovieCatalog movieCatalog,
                         CustomerPreferenceDao customerPreferenceDao) {
@@ -36,4 +39,5 @@ public class MovieRecommender {
         System.out.println("[MovieRecommender] Recommending movies for preference: " + pref);
         System.out.println("[MovieRecommender] Current catalog: " + movieCatalog.getCatalogName());
     }
+
 }

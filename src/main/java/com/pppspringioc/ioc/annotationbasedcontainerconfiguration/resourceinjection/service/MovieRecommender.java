@@ -7,7 +7,7 @@ import com.pppspringioc.ioc.annotationbasedcontainerconfiguration.resourceinject
 
 public class MovieRecommender {
 
-    // 1) @Resource without name => 우선 "customerPreferenceDao" 라는 Bean을 찾음
+    // 1) @Resource without name => 빈의 타입이 CustomerPreferenceDao인 빈을 찾음
     @Resource
     private CustomerPreferenceDao customerPreferenceDao;
 

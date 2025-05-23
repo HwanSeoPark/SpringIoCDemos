@@ -1,6 +1,5 @@
 package com.pppspringioc.ioc.annotationbasedcontainerconfiguration.usingautowired.service;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -15,7 +14,11 @@ import java.util.Optional;
 public class OptionalInjectionBean {
 
     // 1) @Autowired(required=false)
-    @Autowired(required = false)
+	// Declares whether the annotated dependency is required.
+	// required를 false로 설정하였기 때문에,
+	// optionalField 필드에 주입할 MovieFinder 인터페이스 구체가 없을 경우,
+	// UnsatisfiedDependencyException이 발생하지 않고 null이 주입됨
+    @Autowired(required = false) 
     private MovieFinder optionalField; // 주입 실패 시 null
 
     // 2) Optional 파라미터
