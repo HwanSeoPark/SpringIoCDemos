@@ -16,6 +16,17 @@ public class Main {
         try (AnnotationConfigApplicationContext context = 
         		new AnnotationConfigApplicationContext(AppConfig.class)) {
 
+        	System.out.println("📦 등록된 Spring Bean 목록:");
+            String[] beanNames = context.getBeanDefinitionNames();
+
+            for (String name : beanNames) {
+                Object bean = context.getBean(name);
+                System.out.printf("🔸 빈 이름: %-30s | 타입: %s%n", name, bean.getClass().getName());
+            }
+            
+            System.out.println("\n*********************************************************************************************************");
+        	
+        	
             // MovieService Bean 가져오기
             MovieService movieService = context.getBean(MovieService.class);
             System.out.println("\n[Main] MovieService 빈 호출:");

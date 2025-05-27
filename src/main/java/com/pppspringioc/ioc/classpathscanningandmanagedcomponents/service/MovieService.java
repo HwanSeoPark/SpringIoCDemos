@@ -6,7 +6,7 @@ import com.pppspringioc.ioc.classpathscanningandmanagedcomponents.repository.Mov
 
 import java.util.List;
 
-@Service
+@Service // Component를 기반으로하는 스테레오 어노테이션
 public class MovieService {
     private final MovieRepository repository;
 

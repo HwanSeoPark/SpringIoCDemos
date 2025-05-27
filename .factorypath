@@ -14,4 +14,6 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/com/mysql/mysql-connector-j/8.3.0/mysql-connector-j-8.3.0.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/hsqldb/hsqldb/2.7.4/hsqldb-2.7.4.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/h2database/h2/2.3.232/h2-2.3.232.jar" enabled="true" runInBatchMode="false"/>
 </factorypath>
