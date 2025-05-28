@@ -10,12 +10,14 @@ public class MainApp {
 
 	public static void main(String... args) {
 		
-		ApplicationContext context = 
+		AnnotationConfigApplicationContext context = 
         		new AnnotationConfigApplicationContext(ConfigApp.class);
 		
 		SingletonBean single = (SingletonBean) context.getBean(SingletonBean.class);
 		single.doExcute();
 		single.doExcute();
 		single.doExcute();
+		
+		context.close();
 	}
 }
