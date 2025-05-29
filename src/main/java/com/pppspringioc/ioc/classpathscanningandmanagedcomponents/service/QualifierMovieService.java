@@ -7,10 +7,10 @@ import com.pppspringioc.ioc.classpathscanningandmanagedcomponents.qualifier.Onli
 import com.pppspringioc.ioc.classpathscanningandmanagedcomponents.repository.MovieRepository;
 
 @Service
+//@Online
 public class QualifierMovieService {
 
     @Autowired
-    @Online
     private MovieRepository movieRepository;
 
     public void printMovies() {

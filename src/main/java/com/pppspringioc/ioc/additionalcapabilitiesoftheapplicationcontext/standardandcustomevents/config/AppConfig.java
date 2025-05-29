@@ -39,9 +39,9 @@ public class AppConfig {
         SimpleApplicationEventMulticaster multicaster = new SimpleApplicationEventMulticaster();
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         executor.setCorePoolSize(3);
-        executor.setMaxPoolSize(5);
+        executor.setMaxPoolSize(5); // Thread를 5개 만들어 두겠다
         executor.setQueueCapacity(10);
-        executor.setThreadNamePrefix("event-exec-");
+        executor.setThreadNamePrefix("event-exec-"); // Thread의 이름 설정
         executor.initialize();
 
         multicaster.setTaskExecutor(executor);

@@ -26,6 +26,7 @@ public class Main {
         // 4. 컨테이너 초기화 (빈 등록 및 생성)
         ctx.refresh();
         
+        
         System.out.println("📦 등록된 Spring Bean 목록:");
         String[] beanNames = ctx.getBeanDefinitionNames();
 

@@ -40,6 +40,7 @@ public class AppConfig {
         // The default class loader will be used for loading the resource.
         configurer.setLocation(new ClassPathResource("example.properties"));
         return configurer;
+        // 나중에 @PropertySource 어노테이션 쓰면 이거 안써도 된다
     }
 
 }

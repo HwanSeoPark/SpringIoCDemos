@@ -7,8 +7,7 @@ import com.pppspringioc.ioc.classpathscanningandmanagedcomponents.qualifier.Onli
 
 import java.util.List;
 
-@Component
-@Online
+@Online // actionMovieRepository
 public class ActionMovieRepository implements MovieRepository {
     @Override
     public List<Movie> findMovies() {
