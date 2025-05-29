@@ -7,7 +7,9 @@ import org.springframework.context.ApplicationEventPublisherAware;
 import com.pppspringioc.ioc.additionalcapabilitiesoftheapplicationcontext.standardandcustomevents.event.BlockedListEvent;
 
 import java.util.List;
-
+//ApplicationEventPublisherAware -> 이벤트를 발생 시키고 싶어 하는 주체
+// EmailService가 ApplicationEventPublisherAware를 구현한 구현체
+// 결국 EmailService가 이벤트를 발생 시키고 싶어함
 public class EmailService implements ApplicationEventPublisherAware {
 
     private List<String> blockedList;

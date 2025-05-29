@@ -10,6 +10,10 @@ import org.springframework.core.env.Environment;
 @PropertySource("classpath:app.properties")
 public class AppConfig {
 
+	// * Profile
+	// * Properties
+	// * System properties : Os환경변수, JVM 실행 환경...
+	// Spring IoC Container가 구현체를 초기화 때, 생성함
     @Autowired
     private Environment env;
 

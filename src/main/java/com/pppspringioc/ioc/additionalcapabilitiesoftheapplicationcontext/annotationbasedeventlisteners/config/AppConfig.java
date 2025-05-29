@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @Configuration
-@ComponentScan(basePackages = "com.pppspringiocpppspringioc.ioc.additionalcapabilitiesoftheapplicationcontext.annotationbasedeventlisteners")
+@ComponentScan(basePackages = "com.pppspringioc.ioc.additionalcapabilitiesoftheapplicationcontext.annotationbasedeventlisteners")
 public class AppConfig {
 
     @Bean
