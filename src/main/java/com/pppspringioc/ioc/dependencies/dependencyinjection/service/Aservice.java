@@ -8,10 +8,10 @@ public class Aservice { //
 	
 	private Bservice bService;
 	
-	@Autowired
-	public Aservice(Bservice bService) {
-		this.bService = bService;
-	}
+//	@Autowired
+//	public Aservice(Bservice bService) {
+//		this.bService = bService;
+//	}
 
 	public Bservice getbService() {
 		return bService;

@@ -11,10 +11,14 @@ import com.pppspringioc.ioc.dependencies.dependencyinjection.service.SimpleMovie
 import com.pppspringioc.ioc.dependencies.dependencyinjection.service.SimpleMovieLister;
 
 
-@Configuration
+@Configuration//(proxyBeanMethods = true)
 @ComponentScan({"com.pppspringioc.ioc.dependencies.dependencyinjection"})
 public class AppConfig {
 
+	public AppConfig() {
+		System.out.println("AppConfig");
+	}
+	
     // Define MovieFinder bean
     @Bean
     public MovieFinder movieFinder() {
@@ -25,7 +29,7 @@ public class AppConfig {
     @Bean
     public SimpleMovieLister movieLister(MovieFinder movieFinder) {
     	SimpleMovieLister movieLister = new SimpleMovieLister();
-        movieLister.setMovieFinder(movieFinder); // Setter-based DI
+        movieLister.setMovieFinder(movieFinder()); // Setter-based DI
         return movieLister;
         
         //return new SimpleMovieLister(movieFinder);

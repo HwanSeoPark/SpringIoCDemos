@@ -9,12 +9,12 @@ public class Bservice {
 	
 	private Aservice aService;
 	
-	public Bservice() {
-		System.out.println("Bservice Constructor");
-	}
+//	public Bservice() {
+//		System.out.println("Bservice Constructor");
+//	}
 	
-	// 아래 컨스트럭터는 Spring IoC 컨테이너가 호출
-	// 그런데,,, 디펜던시 발견!!!
+	// 아래 컨스트럭터는 Spring IoC 컨테이너가 호출!
+	// 그런데,,,디펜던시 발견!!!
 	@Autowired
 	public Bservice(Aservice aService) {
 		this.aService = aService;
@@ -24,9 +24,14 @@ public class Bservice {
 		return aService;
 	}
 
-	@Autowired
-	public void setaService(Aservice aService) {
-		this.aService = aService;
-	}
+//	@Autowired
+//	public void setaService(Aservice aService) {
+//		this.aService = aService;
+//	}
+
+//	@Autowired
+//	public void setaService(Aservice aService) {
+//		this.aService = aService;
+//	}
 
 }

@@ -24,9 +24,9 @@ public class MainApp {
         Service service = (Service) context.getBean("service");
         Repository isSameRepo = service.getRepo();
         
-        Aservice aService = (Aservice) context.getBean("aservice");
-        Bservice bService = aService.getbService();
-        Aservice isSameAService = bService.getaService();        
+//        Aservice aService = (Aservice) context.getBean("aservice");
+//        Bservice bService = aService.getbService();
+//        Aservice isSameAService = bService.getaService();        
 
         // Call the listMovies method
         movieLister.listMovies();
