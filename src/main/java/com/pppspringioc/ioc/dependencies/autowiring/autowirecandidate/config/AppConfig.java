@@ -9,7 +9,7 @@ import com.pppspringioc.ioc.dependencies.autowiring.autowirecandidate.service.Ca
 import com.pppspringioc.ioc.dependencies.autowiring.autowirecandidate.service.CashPaymentService;
 
 @Configuration
-@ComponentScan(basePackages = {"com.intheeast.ioc.dependencies.autowiring.autowirecandidate"})
+@ComponentScan(basePackages = {"com.pppspringioc.ioc.dependencies.autowiring.autowirecandidate"})
 public class AppConfig {
 
     @Bean  // 기본 autowireCandidate = true

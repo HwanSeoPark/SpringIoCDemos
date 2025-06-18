@@ -6,7 +6,7 @@ import com.pppspringioc.ioc.dependencies.methodinjection.lookupmethodinjection2.
 import com.pppspringioc.ioc.dependencies.methodinjection.lookupmethodinjection2.service.OrderService;
 
 @Configuration
-@ComponentScan(basePackages= {"com.intheeast.ioc.dependencies.methodinjection.lookupmethodinjection2"})
+@ComponentScan(basePackages= {"com.pppspringioc.ioc.dependencies.methodinjection.lookupmethodinjection2"})
 public class AppConfig {
 
     @Bean
